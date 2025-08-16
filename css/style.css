@@ -1,0 +1,192 @@
+:root {
+    --serif: 'Playfair Display', serif;;
+    --sans-serif: 'Inter', sans-serif;
+    --title: "Sansita Swashed", system-ui;
+    --gap: 2rem; /* 16px = 1rem */
+    --desktop-gap: 1.25rem; /* 20px = 1.25rem */
+    --yellow: #FFB200;
+    --black: #000000;
+    --gray: #DEE2E6;
+    --white: #ffffff;
+    --bold: 700;
+    --semi-bold: 600;
+}
+
+/* Base (Mobile) */
+body {
+    font-family: var(--sans-serif);
+    background-color: var(--black);
+    color: var(--gray);
+}
+
+section {
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+.my-6 {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--serif);
+    font-weight: var(--semi-bold);
+}
+
+/* Header */
+.site-header-logo img {
+    width: 6rem;
+    height: auto;
+}
+
+.site-header .navbar {
+    background-color: var(--black);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-item {
+    margin-bottom: 0 !important;
+}
+
+/* Change the color of hamburger menu (I was helped by ChatGPT to change the svg color, sorry...) */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffb200' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler, .navbar-toggler-icon {
+    border-color: var(--yellow);
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--yellow);
+}
+
+.navbar-nav .nav-item {
+    margin-bottom: 0.5rem;
+}
+
+/* Banner */
+.carousel-cell {
+    width: 100%;
+    height: 80vh;
+}
+
+.carousel-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* position dots up a bit */
+.flickity-page-dots {
+    bottom: 22px;
+}
+
+/* dots are lines */
+.flickity-page-dots .dot {
+    height: 4px;
+    width: 40px;
+    margin: 0;
+    border-radius: 0;
+}
+
+/* GSAP Scroll Animation */
+/* 간단한 초기 스타일 */
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+/* About */
+.about .container-fluid {
+    max-width: 70rem;
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Gallery */
+.gallery .container {
+    max-width: 80rem;
+}
+
+.filter-buttons p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.filter-buttons .mixitup-control-active {
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+}
+
+/* Contact */
+.contact .container {
+    max-width: 60rem;
+}
+
+input.form-control {
+    height: 2.8rem;
+}
+
+.contact-container button {
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--black);
+    height: 2.8rem;
+}
+
+/* Leaflet Map */
+#map { 
+    width: 100%;
+    height: 30rem;
+}
+
+/* Form Validation */
+.error {
+    color: #d22929;
+}
+
+/* Footer */
+.site-footer .navbar {
+    background-color: var(--black);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.site-footer-logo img {
+    width: 6rem;
+}
+
+.site-footer-copyright p {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* Desktop */
+/* Used media query for desktop version with 992px since Bootstrap's lg breakpoint is 992px */
+@media screen and (min-width: 992px) {
+
+    /* Base */
+    /* Made custom bootstrap css to use wider gap in desktop version s*/
+    .g-lg-6 {
+        --bs-gutter-x: 5rem;
+        --bs-gutter-y: 5rem;
+    }
+
+    /* Header */
+    .site-header-logo img {
+        width: 7rem;
+    }
+
+    /* Banner */
+    .site-banner .carousel-cell {
+        height: 75vh;
+    }
+
+}
