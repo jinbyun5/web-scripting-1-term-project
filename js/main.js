@@ -19,6 +19,19 @@ var flkty = new Flickity(elem, {
   prevNextButtons: false
 });
 
+
+// Type JS
+// The text is animated as if it's being typed on the screen
+var typed = new Typed('#letter-typing', {
+  // Strings in the array display one by one
+  strings: ["Welcome to my gallery", "Enjoy the visual stories"],
+  typeSpeed: 50,
+  // After the letters were typed, it is erased back
+  backSpeed: 25,
+  loop: true
+});
+
+
 // GSAP Scroll Animation
 // Animate the banner as soon as opening the website since I didn't set the scrollTrigger
 gsap.from(".main-carousel", {
@@ -38,6 +51,17 @@ gsap.from(".about", {
   opacity: 0,
   // It moves from x:-100 to x:0, which is from left to right
   x: -100,
+  duration: 2.5,
+  ease: "power2.out"
+});
+
+// Animate bts section when scrolling down the page
+gsap.from(".bts", {
+  // When the viewport encounters the element which has '.fade-right' class, animation starts to move '.bts' section
+  scrollTrigger: ".fade-right",
+  opacity: 0,
+  // It moves from x:100 to x:0, which is from right to left
+  x: 100,
   duration: 2.5,
   ease: "power2.out"
 });
